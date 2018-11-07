@@ -2,7 +2,7 @@ version: '3'
 services:
 
   db:
-    container_name: psql
+    container_name: db
     restart: always
     build:
       context: ./db
@@ -17,25 +17,23 @@ services:
     ports:
       - 2345:5432
     networks:
-      - psql-pgql
+      - db-graphql
 
   graphql:
-    container_name: pgql
+    container_name: graphql
     restart: always
     image: graphile/postgraphile
     depends_on:
       - db
-    environment:
-      DATABASE_URL: postgres://cp_postgraphile:some-decent-password@localhost:2345/centripetal
     expose:
       - 5000
     ports:
       - 5000:5000
-    command: ["postgraphile", "--connection", "postgres://cp_postgraphile:some-decent-password@db:5432/centripetal", "--host", "localhost", "--port", "5000", "--schema", "app_public"]
+    command: ["postgraphile", "--connection", "postgres://cp_postgraphile:some-decent-password@db/centripetal", "--host", "localhost", "--port", "5000", "--schema", "app_public"]
     links:
       - db
     networks:
-      - psql-pgql
+      - db-graphql
 
 networks:
-  psql-pgql:
+  db-graphql:
