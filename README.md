@@ -6,7 +6,7 @@ There's a wiki too - [Github Wiki](https://github.com/alexisrolland/docker-postg
 # Requirements
 * [Docker Community Edition](https://docs.docker.com/install/)
 * [Docker Compose](https://docs.docker.com/compose/)
-  - If you are using Windows or Mac, docker-compose was likely installed when you setup Docker. To check this run `docker-compose -v` in your command line
+  - If you are using Windows or Mac, docker-compose was likely installed when you setup Docker. To check this run `docker-compose -v` in your command line. For Linux find instructions in the link
 
 # How To
 
