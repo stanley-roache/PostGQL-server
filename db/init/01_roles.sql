@@ -1,4 +1,4 @@
-create role cp_postgraphile login password 'some-decent-password';
+create role cp_postgraphile login password 'somedecentpassword';
 create role cp_anonymous;
 grant cp_anonymous to cp_postgraphile;
 create role cp_account;
