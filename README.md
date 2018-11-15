@@ -18,7 +18,7 @@ cd PostGQL-server
 ```
 Next we setup the database:
 ```shell
-docker-compose run postgres 
+docker-compose up postgres 
 ```
 
 You should see rapidfire SQL log output; GRANT, CREATE etc. After the terminal has settled down the database is up and running, exit out with Ctrl+C
