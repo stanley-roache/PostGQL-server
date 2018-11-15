@@ -11,8 +11,21 @@ This project has been developed on **Linux Ubuntu 18.04 LTS**. It is using the f
 * [Postgraphile Docker image](https://hub.docker.com/r/graphile/postgraphile/)
 
 # How To
-To run the database and GraphQL API with the current data model, simply go to the project root and execute the following command:
+Make sure you are in the root folder of the project
 ```shell
-$ cd docker-postgresql-postgraphile
-$ docker-compose up
+cd PostGQL-server
 ```
+Next we setup the database:
+```shell
+docker-compose run postgres 
+```
+
+You should see SQL log output; GRANT, CREATE etc. After the terminal has settled down the database is up and running, exit out with Ctrl+C
+
+Run the database and server together by running the command:
+
+```shell
+docker-compose up 
+```
+
+Follow the link output in the terminal to start experimentint with GraphQL queries
