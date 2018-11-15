@@ -37,7 +37,7 @@ Press Ctrl+C in terminal and wait to allow the server to shut down, when you hav
 docker-compose down
 ```
 
-The docker contianers have been shut down, any database data will persist locally so when you start the server again you keep everything
+The docker contianers have been shut down, any database contents will persist locally so when you start the server again you keep everything
 
 ## Run the server again
 
@@ -47,3 +47,18 @@ docker-compose up
 ```
 
 And you're back
+
+## Run the database and server separately
+
+You can if you want run the postgres container and postgraphile container in seperate terminal windows. First in one window run
+
+```shell
+cd PostGQL-server
+docker-compose up postgres
+```
+
+Wait until this terminal says something like 'database is ready to accept connections'. Open a new terminal window (in the same folder) and run
+
+```shell
+docker-compose up postgraphile
+```
